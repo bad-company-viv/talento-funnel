@@ -41,10 +41,12 @@ const SuccessStories = () => {
           <div className="testimonials-list">
             <div className="testimonial-item">
               <div className="testimonial-header">
-                <div className="avatar">👨‍💻</div>
+                <div className="avatar">
+                  <img src="https://images.pexels.com/photos/3400573/pexels-photo-3400573.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&dpr=2" alt="Rahul Sharma" onError={(e) => { e.currentTarget.src = '/avatar-fallback.svg' }} />
+                </div>
                 <div className="user-info">
                   <h4>Rahul Sharma</h4>
-                  <p>Software Engineer at PhysicsWallah</p>
+                  <p>Software Engineer</p>
                 </div>
                 <div className="rating">⭐⭐⭐⭐⭐</div>
               </div>
@@ -56,10 +58,12 @@ const SuccessStories = () => {
 
             <div className="testimonial-item">
               <div className="testimonial-header">
-                <div className="avatar">👨‍🏫</div>
+                <div className="avatar">
+                  <img src="https://images.pexels.com/photos/33703816/pexels-photo-33703816.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&dpr=2" alt="Priya Patel" onError={(e) => { e.currentTarget.src = '/avatar-fallback.svg' }} />
+                </div>
                 <div className="user-info">
                   <h4>Priya Patel</h4>
-                  <p>IIT JEE Physics Teacher at Allen</p>
+                  <p>IIT JEE Physics Teacher</p>
                 </div>
                 <div className="rating">⭐⭐⭐⭐⭐</div>
               </div>
@@ -71,10 +75,12 @@ const SuccessStories = () => {
 
             <div className="testimonial-item">
               <div className="testimonial-header">
-                <div className="avatar">👩‍💼</div>
+                <div className="avatar">
+                  <img src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&dpr=2" alt="Anjali Verma" onError={(e) => { e.currentTarget.src = '/avatar-fallback.svg' }} />
+                </div>
                 <div className="user-info">
                   <h4>Anjali Verma</h4>
-                  <p>Academic Counselor at Byju's</p>
+                  <p>Academic Counselor</p>
                 </div>
                 <div className="rating">⭐⭐⭐⭐⭐</div>
               </div>

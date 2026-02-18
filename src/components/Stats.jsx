@@ -41,7 +41,9 @@ const Stats = () => {
               why does hiring still take 30 days? We're solving for speed, relevance, and dignity.
             </p>
             <div className="testimonial-author">
-              <div className="author-avatar">👨‍💼</div>
+              <div className="author-avatar">
+                <img src="https://images.pexels.com/photos/16749987/pexels-photo-16749987.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&dpr=2" alt="Sandeep Boora" onError={(e) => { e.currentTarget.src = '/avatar-fallback.svg' }} />
+              </div>
               <div className="author-info">
                 <div className="author-name">Sandeep Boora</div>
                 <div className="author-role">Co-founder, Tallento.ai</div>

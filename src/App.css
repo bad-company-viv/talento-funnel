@@ -1,15 +1,38 @@
 .funnel {
-  overflow-x: hidden;
+  overflow: visible;
   color: #0b132a;
+  width: 100%;
 }
 
 .funnel section[id] {
   scroll-margin-top: 84px;
 }
 
+.funnel section {
+  overflow: visible;
+  max-height: none;
+}
+
 .container {
   width: min(1140px, calc(100% - 2rem));
   margin: 0 auto;
+}
+
+.app-icon {
+  width: 1em;
+  height: 1em;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.inline-icon {
+  width: 0.95em;
+  height: 0.95em;
+  flex-shrink: 0;
 }
 
 .top-nav {
@@ -80,11 +103,11 @@
 
 .hero-section {
   position: relative;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100dvh - 64px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 0 4rem;
+  padding: 2rem 0;
   background:
     radial-gradient(circle at 12% 18%, rgba(17, 153, 142, 0.15), transparent 38%),
     radial-gradient(circle at 84% 9%, rgba(255, 116, 92, 0.22), transparent 34%),
@@ -92,13 +115,12 @@
 }
 
 .scroll-next {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  bottom: 1.15rem;
-  transform: translateX(-50%);
+  position: static;
+  width: fit-content;
+  margin: 1rem auto 0;
   padding: 0.42rem 0.9rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
@@ -113,6 +135,16 @@
 .scroll-next:hover {
   color: #0f7f75;
   box-shadow: 0 10px 20px rgba(22, 71, 125, 0.2);
+}
+
+.hero-scroll-next {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 2;
+  animation: exploreFloat 2s ease-in-out infinite;
 }
 
 .hero-grid {
@@ -153,9 +185,9 @@
 }
 
 .hero-copy h1 {
-  font-size: clamp(2rem, 4.2vw, 3.8rem);
-  line-height: 1.05;
-  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
 }
 
 .hero-copy h1 span {
@@ -165,23 +197,24 @@
 .hero-copy p {
   max-width: 60ch;
   color: #4a5974;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
 .chip-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.2rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .chip {
   border: 1px solid #d5e4f4;
   background: rgba(255, 255, 255, 0.84);
-  padding: 0.5rem 0.8rem;
+  padding: 0.4rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #23435f;
 }
 
@@ -395,9 +428,6 @@
   color: #1a202c;
   font-weight: 700;
 }
-  font-size: 0.79rem;
-  color: #154372;
-}
 
 .funnel-steps {
   display: grid;
@@ -467,8 +497,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
+  color: #cc4a7e;
   flex-shrink: 0;
+}
+
+.category-icon .app-icon {
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .category-item p {
@@ -500,9 +535,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  color: #315f96;
   margin-bottom: 0.3rem;
   border: 2px solid #e2e8f0;
+}
+
+.trust-icon .app-icon {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .trust-grid strong {
@@ -740,8 +780,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  color: #f3f8ff;
   flex-shrink: 0;
+}
+
+.journey-icon .app-icon {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .journey-content {
@@ -811,6 +856,9 @@
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .recruiter-card {
@@ -875,16 +923,21 @@
 
 .verified-mark {
   color: #6468f7;
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .bookmark-btn {
   border: 0;
   background: transparent;
   color: #7b92b2;
-  font-size: 1.15rem;
   cursor: pointer;
-  line-height: 1;
+  line-height: 0;
+}
+
+.bookmark-btn .app-icon {
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .recruiter-meta {
@@ -900,6 +953,9 @@
   background: #e9f0fa;
   border-radius: 0.55rem;
   padding: 0.42rem 0.56rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .match-row {
@@ -1192,14 +1248,14 @@
 }
 
 .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .animate-on-scroll.in-view {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .animate-on-scroll .hero-copy,
@@ -1219,8 +1275,8 @@
 .animate-on-scroll .resume-placeholder,
 .animate-on-scroll .recommended-card,
 .animate-on-scroll .loop-card {
-  opacity: 0;
-  transform: translateY(10px);
+  opacity: 1;
+  transform: none;
 }
 
 .animate-on-scroll.in-view .hero-copy,
@@ -1240,7 +1296,7 @@
 .animate-on-scroll.in-view .resume-placeholder,
 .animate-on-scroll.in-view .recommended-card,
 .animate-on-scroll.in-view .loop-card {
-  animation: sectionFadeUp 0.7s ease both;
+  animation: none;
 }
 
 .category-item:nth-child(2),
@@ -1441,9 +1497,13 @@
 
 @media (max-width: 620px) {
   .hero-section {
-    padding-top: 4.3rem;
-    padding-bottom: 5.8rem;
-    min-height: auto;
+    min-height: calc(100dvh - 64px);
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .hero-scroll-next {
+    bottom: 0.8rem;
   }
 
   .filter-grid,
@@ -1578,8 +1638,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  color: #49628a;
   flex-shrink: 0;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .testimonial-info {
@@ -1600,8 +1667,17 @@
 }
 
 .testimonial-rating {
-  font-size: 1rem;
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  gap: 2px;
   flex-shrink: 0;
+}
+
+.rating-star {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 .testimonial-quote {
@@ -1833,6 +1909,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .view-jobs-btn:hover {
@@ -1910,7 +1989,8 @@
 
 .verified-mark {
   color: #10b981;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .urgent-badge {
@@ -1941,8 +2021,9 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
   flex-shrink: 0;
+  color: #5f7290;
+  line-height: 0;
 }
 
 .bookmark-btn:hover {
@@ -1964,9 +2045,9 @@
 .recruiter-meta span {
   color: #4a5568;
   font-size: 0.9rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .apply-quick-btn {
@@ -2101,8 +2182,20 @@
 }
 
 .filter-icon {
-  font-size: 2.5rem;
+  color: #6d28d9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f5f3ff;
   margin-bottom: 8px;
+}
+
+.filter-icon .app-icon {
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .filter-label {
@@ -2165,7 +2258,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  color: #475a78;
+}
+
+.job-icon .app-icon {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .match-badge-preview {
@@ -2337,9 +2435,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0;
   flex-shrink: 0;
+}
+
+.benefit-icon .app-icon {
+  width: 13px;
+  height: 13px;
 }
 
 .resume-panel {
@@ -2512,6 +2614,9 @@
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
   margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .priority-cta:hover {
@@ -2542,10 +2647,6 @@
   .priority-cta {
     width: 100%;
     padding: 16px 30px;
-  }
-}
-  .resume-content h2 {
-    font-size: 2rem;
   }
 }
 
@@ -2589,8 +2690,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  color: #f8f7ff;
   margin-bottom: 4px;
+}
+
+.loop-icon .app-icon {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .loop-card h3 {
@@ -2623,6 +2729,9 @@
   font-weight: 500;
   border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .loop-card:hover .feature-tag {
@@ -2660,9 +2769,15 @@
 
 .list-icon {
   color: #7c3aed;
-  font-weight: 700;
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+}
+
+.list-icon .app-icon {
+  width: 1rem;
+  height: 1rem;
 }
 
 @media (max-width: 968px) {

@@ -4,10 +4,10 @@ import './App.css'
 const roleChips = ['IIT JEE / NEET Faculty', 'Sales & Marketing', 'Schools / Colleges', 'Healthcare + IT']
 
 const filters = [
-  { label: 'Industry', value: 'EdTech + IT', icon: '🏢' },
-  { label: 'Experience', value: '2-5 years', icon: '📊' },
-  { label: 'Role Type', value: 'Full-time', icon: '💼' },
-  { label: 'Location', value: 'Remote / Hybrid', icon: '📍' }
+  { label: 'Industry', value: 'EdTech + IT', icon: 'building' },
+  { label: 'Experience', value: '2-5 years', icon: 'chart' },
+  { label: 'Role Type', value: 'Full-time', icon: 'briefcase' },
+  { label: 'Location', value: 'Remote / Hybrid', icon: 'pin' }
 ]
 
 const previewJobs = [
@@ -18,7 +18,7 @@ const previewJobs = [
     salary: '₹8-12 LPA',
     demand: 'High Demand',
     match: 94,
-    icon: '🎓'
+    icon: 'graduation'
   },
   {
     role: 'Senior Backend Developer',
@@ -27,7 +27,7 @@ const previewJobs = [
     salary: '₹15-22 LPA',
     demand: 'Active Hiring',
     match: 92,
-    icon: '💻'
+    icon: 'code'
   },
   {
     role: 'NEET Biology Faculty',
@@ -36,7 +36,7 @@ const previewJobs = [
     salary: '₹7-11 LPA',
     demand: 'Fast Track',
     match: 91,
-    icon: '📚'
+    icon: 'book'
   }
 ]
 
@@ -66,40 +66,40 @@ const engagementLoop = [
 ]
 
 const trustStats = [
-  { value: '1M+', label: 'Talent Pool', icon: '👥' },
-  { value: '5,500+', label: 'Companies', icon: '🏢' },
-  { value: '100%', label: 'Verified Profiles', icon: '✓' },
-  { value: 'AI', label: 'Career Guidance', icon: '🤖' }
+  { value: '1M+', label: 'Talent Pool', icon: 'users' },
+  { value: '5,500+', label: 'Companies', icon: 'building' },
+  { value: '100%', label: 'Verified Profiles', icon: 'checkBadge' },
+  { value: 'AI', label: 'Career Guidance', icon: 'spark' }
 ]
 
 const careerJourneySteps = [
   {
     number: '01',
-    icon: '🎯',
+    icon: 'target',
     title: 'Browse role-fit jobs',
     description: 'See teaching & IT roles with salary ranges in ₹ LPA, hiring demand, and AI match scores before signup.'
   },
   {
     number: '02',
-    icon: '💰',
+    icon: 'coins',
     title: 'Preview salary and demand',
     description: 'Real salary ranges and market demand insights help you make informed decisions before applying.'
   },
   {
     number: '03',
-    icon: '🤖',
+    icon: 'spark',
     title: 'Get AI match score',
     description: 'Know exactly how well you fit each role with AI-powered analysis of your skills and experience.'
   },
   {
     number: '04',
-    icon: '📄',
+    icon: 'file',
     title: 'Upload resume to unlock',
     description: 'AI parsing activates full ranking, recruiter visibility, and one-click application features.'
   },
   {
     number: '05',
-    icon: '⚡',
+    icon: 'bolt',
     title: 'Apply & track activity',
     description: 'One-click apply with auto-filled profile and track recruiter views and interview invites in real-time.'
   }
@@ -175,15 +175,15 @@ const recruiterJobs = [
 ]
 
 const jobCategories = [
-  { title: 'IIT JEE NEET Olympiad NDA Coaching Jobs', icon: '🎓' },
-  { title: 'Sales Marketing Non Teaching Jobs', icon: '📣' },
-  { title: 'Schools Teaching Non Teaching Jobs', icon: '🏫' },
-  { title: 'College Universities Jobs', icon: '🏛️' },
-  { title: 'CA CS CAT MAT Jobs', icon: '🧮' },
-  { title: 'IIT JAM GATE NET Jobs', icon: '🧪' },
-  { title: 'Medical Nursing College Jobs', icon: '🩺' },
-  { title: 'IT Jobs', icon: '💻' },
-  { title: 'Health Care', icon: '❤️' }
+  { title: 'IIT JEE NEET Olympiad NDA Coaching Jobs', icon: 'graduation' },
+  { title: 'Sales Marketing Non Teaching Jobs', icon: 'megaphone' },
+  { title: 'Schools Teaching Non Teaching Jobs', icon: 'school' },
+  { title: 'College Universities Jobs', icon: 'university' },
+  { title: 'CA CS CAT MAT Jobs', icon: 'calculator' },
+  { title: 'IIT JAM GATE NET Jobs', icon: 'flask' },
+  { title: 'Medical Nursing College Jobs', icon: 'stethoscope' },
+  { title: 'IT Jobs', icon: 'code' },
+  { title: 'Health Care', icon: 'heart' }
 ]
 
 const hiringTrends = [
@@ -192,6 +192,75 @@ const hiringTrends = [
   { label: 'Healthcare', value: 68 },
   { label: 'IT & Product', value: 81 }
 ]
+
+function Icon({ name, className = '' }) {
+  const cls = `app-icon ${className}`.trim()
+
+  switch (name) {
+    case 'building':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M3 21h18M6 21V5h12v16M9 9h.01M12 9h.01M15 9h.01M9 13h.01M12 13h.01M15 13h.01M11 21v-4h2v4" /></svg>
+    case 'chart':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M4 20V10M10 20V4M16 20v-7M22 20v-12M3 20h20" /></svg>
+    case 'briefcase':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M9 6V4h6v2M3 9h18v10H3zM3 12h18" /></svg>
+    case 'pin':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M12 22s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Zm0-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" /></svg>
+    case 'graduation':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="m2 9 10-5 10 5-10 5L2 9Zm4 2.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" /></svg>
+    case 'code':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16" /></svg>
+    case 'book':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M4 5h8a3 3 0 0 1 3 3v11H7a3 3 0 0 0-3 3V5Zm16 0h-8a3 3 0 0 0-3 3v11h8a3 3 0 0 1 3 3V5Z" /></svg>
+    case 'users':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+    case 'checkBadge':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="m9 12 2 2 4-4M12 3l2.4 1.6 2.9-.3.8 2.8 2.5 1.5-1.5 2.5.3 2.9-2.8.8-1.6 2.4-2.4-1.6-2.9.3-.8-2.8-2.5-1.5 1.5-2.5-.3-2.9 2.8-.8L12 3Z" /></svg>
+    case 'spark':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="m12 3 2.2 4.8L19 10l-4.8 2.2L12 17l-2.2-4.8L5 10l4.8-2.2L12 3Zm7 11 1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2ZM5 14l.8 1.7L7.5 17l-1.7.8L5 19.5l-.8-1.7L2.5 17l1.7-.8L5 14Z" /></svg>
+    case 'target':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M12 3v3M12 18v3M3 12h3M18 12h3M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-5a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" /></svg>
+    case 'coins':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M6 6c0-1.7 2.7-3 6-3s6 1.3 6 3-2.7 3-6 3-6-1.3-6-3Zm0 6c0 1.7 2.7 3 6 3s6-1.3 6-3M6 18c0 1.7 2.7 3 6 3s6-1.3 6-3M6 6v12m12-12v12" /></svg>
+    case 'file':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M14 2H6v20h12V8l-4-6Zm0 0v6h4M8 13h8M8 17h8" /></svg>
+    case 'bolt':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" /></svg>
+    case 'megaphone':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M3 11v2a3 3 0 0 0 3 3h2l6 3V5L8 8H6a3 3 0 0 0-3 3Zm11-3 7-2v12l-7-2" /></svg>
+    case 'school':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="m2 10 10-6 10 6-10 6-10-6Zm3 1.8V18h14v-6.2M10 18v-4h4v4" /></svg>
+    case 'university':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="m2 9 10-5 10 5M4 10v8M8 10v8M12 10v8M16 10v8M20 10v8M2 21h20" /></svg>
+    case 'calculator':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M7 3h10v18H7zM9 7h6M9 11h2M13 11h2M9 15h2M13 15h2M9 19h6" /></svg>
+    case 'flask':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M10 2h4M10 2v4l-5 9a4 4 0 0 0 3.5 6h7a4 4 0 0 0 3.5-6l-5-9V2M8 14h8" /></svg>
+    case 'stethoscope':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M6 3v5a4 4 0 0 0 8 0V3M4 3h4M12 3h4M14 14v2a4 4 0 1 0 8 0v-2a2 2 0 1 0-4 0v2a2 2 0 1 1-4 0v-2Z" /></svg>
+    case 'heart':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M12 21s-7-4.3-9.2-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.2 6c-2.2 4.7-9.2 9-9.2 9Z" /></svg>
+    case 'clock':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M12 7v5l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+    case 'bookmark':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M6 3h12v18l-6-4-6 4V3Z" /></svg>
+    case 'star':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="m12 3 2.7 5.5 6 .9-4.4 4.2 1 6-5.3-2.8-5.3 2.8 1-6L3.3 9.4l6-.9L12 3Z" /></svg>
+    case 'rocket':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M5 14c0-5 4-9 9-9h3v3c0 5-4 9-9 9H5Zm6-6 4 4M7 15l-2 4 4-2M10 18l-1 3 3-1" /></svg>
+    case 'refresh':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M3 12a9 9 0 0 1 15.4-6.4L21 8M21 4v4h-4M21 12a9 9 0 0 1-15.4 6.4L3 16M3 20v-4h4" /></svg>
+    case 'arrowRight':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+    case 'userCode':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M18 9l-2 2 2 2M22 9l2 2-2 2" /></svg>
+    case 'userTeach':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M18 10h6M21 7v6" /></svg>
+    case 'userWork':
+      return <svg viewBox="0 0 24 24" className={cls}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M17 9h6v8h-6z" /></svg>
+    default:
+      return null
+  }
+}
 
 function App() {
   const handleCheckMatch = () => {
@@ -307,7 +376,7 @@ function App() {
             </div>
           </div>
         </div>
-        <a href="#hiring-trends" className="scroll-next" aria-label="Scroll to next section">
+        <a href="#hiring-trends" className="scroll-next hero-scroll-next" aria-label="Scroll to next section">
           Scroll to explore ↓
         </a>
       </section>
@@ -331,7 +400,7 @@ function App() {
         </div>
       </section>
 
-      <section className="categories-section animate-on-scroll">
+      <section className="categories-section animate-on-scroll" id="categories">
         <div className="container">
           <div className="section-head">
             <h2>Opportunities across every major career track</h2>
@@ -341,7 +410,7 @@ function App() {
             {jobCategories.map((category) => (
               <article key={category.title} className="category-item">
                 <span className="category-icon" aria-hidden="true">
-                  {category.icon}
+                  <Icon name={category.icon} />
                 </span>
                 <p>{category.title}</p>
               </article>
@@ -354,7 +423,7 @@ function App() {
         <div className="container trust-grid">
           {trustStats.map((item) => (
             <article key={item.label}>
-              <div className="trust-icon">{item.icon}</div>
+              <div className="trust-icon"><Icon name={item.icon} /></div>
               <strong>{item.value}</strong>
               <span>{item.label}</span>
             </article>
@@ -371,7 +440,7 @@ function App() {
           <div className="journey-grid">
             {careerJourneySteps.map((step, idx) => (
               <article className="journey-card" key={step.title}>
-                <div className="journey-icon">{step.icon}</div>
+                <div className="journey-icon"><Icon name={step.icon} /></div>
                 <div className="journey-content">
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
@@ -392,7 +461,7 @@ function App() {
           <div className="filter-grid">
             {filters.map((filter) => (
               <article key={filter.label} className="filter-card">
-                <div className="filter-icon">{filter.icon}</div>
+                <div className="filter-icon"><Icon name={filter.icon} /></div>
                 <span className="filter-label">{filter.label}</span>
                 <strong className="filter-value">{filter.value}</strong>
               </article>
@@ -411,13 +480,13 @@ function App() {
             {previewJobs.map((job) => (
               <article key={job.role} className="job-preview-card">
                 <div className="job-preview-header">
-                  <div className="job-icon">{job.icon}</div>
+                  <div className="job-icon"><Icon name={job.icon} /></div>
                 </div>
                 <h3>{job.role}</h3>
                 <p className="job-company">{job.company}</p>
                 <div className="job-meta-preview">
-                  <small>📍 {job.location}</small>
-                  <small>💰 {job.salary}</small>
+                  <small><Icon name="pin" className="inline-icon" /> {job.location}</small>
+                  <small><Icon name="coins" className="inline-icon" /> {job.salary}</small>
                   <small className="demand-badge">{job.demand}</small>
                 </div>
                 <button type="button" className="check-match-preview" onClick={handleCheckMatch}>Check Match</button>
@@ -467,12 +536,16 @@ function App() {
           <div className="testimonials-grid">
             <article className="testimonial-card">
               <div className="testimonial-header">
-                <div className="testimonial-avatar">👨‍💻</div>
+                <div className="testimonial-avatar">
+                  <img src="https://images.pexels.com/photos/3400573/pexels-photo-3400573.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&dpr=2" alt="Rahul Sharma" onError={(e) => { e.currentTarget.src = '/avatar-fallback.svg' }} />
+                </div>
                 <div className="testimonial-info">
                   <h4>Rahul Sharma</h4>
-                  <p>Software Engineer at PhysicsWallah</p>
+                  <p>Software Engineer</p>
                 </div>
-                <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <div className="testimonial-rating">
+                  {Array.from({ length: 5 }).map((_, i) => <Icon key={`r1-${i}`} name="star" className="rating-star" />)}
+                </div>
               </div>
               <p className="testimonial-quote">
                 "I uploaded my resume on Monday and had three interviews scheduled by Friday. 
@@ -482,12 +555,16 @@ function App() {
 
             <article className="testimonial-card">
               <div className="testimonial-header">
-                <div className="testimonial-avatar">👨‍🏫</div>
+                <div className="testimonial-avatar">
+                  <img src="https://images.pexels.com/photos/33703816/pexels-photo-33703816.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&dpr=2" alt="Priya Patel" onError={(e) => { e.currentTarget.src = '/avatar-fallback.svg' }} />
+                </div>
                 <div className="testimonial-info">
                   <h4>Priya Patel</h4>
-                  <p>IIT JEE Physics Teacher at Allen</p>
+                  <p>IIT JEE Physics Teacher</p>
                 </div>
-                <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <div className="testimonial-rating">
+                  {Array.from({ length: 5 }).map((_, i) => <Icon key={`r2-${i}`} name="star" className="rating-star" />)}
+                </div>
               </div>
               <p className="testimonial-quote">
                 "What impressed me most was how the platform understood my teaching experience. 
@@ -497,12 +574,16 @@ function App() {
 
             <article className="testimonial-card">
               <div className="testimonial-header">
-                <div className="testimonial-avatar">👩‍💼</div>
+                <div className="testimonial-avatar">
+                  <img src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&dpr=2" alt="Anjali Verma" onError={(e) => { e.currentTarget.src = '/avatar-fallback.svg' }} />
+                </div>
                 <div className="testimonial-info">
                   <h4>Anjali Verma</h4>
-                  <p>Academic Counselor at Byju's</p>
+                  <p>Academic Counselor</p>
                 </div>
-                <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <div className="testimonial-rating">
+                  {Array.from({ length: 5 }).map((_, i) => <Icon key={`r3-${i}`} name="star" className="rating-star" />)}
+                </div>
               </div>
               <p className="testimonial-quote">
                 "As someone from a Tier 2 city, I was skeptical. But the quality of matches was exceptional. 
@@ -516,7 +597,7 @@ function App() {
       <section className="resume-section animate-on-scroll">
         <div className="container resume-grid">
           <div className="resume-content">
-            <div className="resume-badge">🚀 Unlock AI Features</div>
+            <div className="resume-badge"><Icon name="rocket" className="inline-icon" /> Unlock AI Features</div>
             <h2>Resume upload unlocks your best opportunities</h2>
             <p>
               AI parses your skills, experience, and career trajectory to rank jobs, improve match quality, 
@@ -524,15 +605,15 @@ function App() {
             </p>
             <div className="resume-benefits">
               <div className="benefit-item">
-                <span className="benefit-icon">✓</span>
+                <span className="benefit-icon"><Icon name="checkBadge" /></span>
                 <span>AI-powered profile parsing</span>
               </div>
               <div className="benefit-item">
-                <span className="benefit-icon">✓</span>
+                <span className="benefit-icon"><Icon name="checkBadge" /></span>
                 <span>Instant job matching & ranking</span>
               </div>
               <div className="benefit-item">
-                <span className="benefit-icon">✓</span>
+                <span className="benefit-icon"><Icon name="checkBadge" /></span>
                 <span>One-click application auto-fill</span>
               </div>
             </div>
@@ -542,22 +623,22 @@ function App() {
           </div>
           <div className="resume-panel">
             <div className="panel-header">
-              <span className="status-badge">✓ AI Parsing Complete</span>
+              <span className="status-badge"><Icon name="checkBadge" className="inline-icon" /> AI Parsing Complete</span>
             </div>
             <div className="panel-content">
               <h3>Top fit: IIT JEE Mathematics Teacher</h3>
               <p className="company-match">Allen Career Institute • 96% Match</p>
               <ul className="insights-list">
                 <li>
-                  <span className="insight-icon">🎯</span>
+                  <span className="insight-icon"><Icon name="target" /></span>
                   <span>5 high-fit teaching jobs unlocked</span>
                 </li>
                 <li>
-                  <span className="insight-icon">📊</span>
-                  <span>Profile completion: 42% → 94%</span>
+                  <span className="insight-icon"><Icon name="chart" /></span>
+                  <span>Profile completion: 42% to 94%</span>
                 </li>
                 <li>
-                  <span className="insight-icon">⚡</span>
+                  <span className="insight-icon"><Icon name="bolt" /></span>
                   <span>One-click apply now available</span>
                 </li>
               </ul>
@@ -574,7 +655,7 @@ function App() {
               <p>Fresh roles added every hour. Your perfect match could be live right now across India.</p>
             </div>
             <button type="button" className="view-jobs-btn">
-              View All Jobs →
+              View All Jobs <Icon name="arrowRight" className="inline-icon" />
             </button>
           </div>
 
@@ -585,20 +666,20 @@ function App() {
                   <div className={`company-badge ${job.tone}`}>{job.badge}</div>
                   <div className="recruiter-title-wrap">
                     <h3>
-                      {job.role} <span className="verified-mark">✓</span>
+                      {job.role} <span className="verified-mark"><Icon name="checkBadge" /></span>
                       {job.urgent && <span className="urgent-badge">Urgent</span>}
                     </h3>
                     <p>{job.company}</p>
                   </div>
                   <button type="button" className="bookmark-btn" aria-label={`Save ${job.role}`}>
-                    ⭐
+                    <Icon name="bookmark" />
                   </button>
                 </div>
 
                 <div className="recruiter-meta">
-                  <span>📍 {job.location}</span>
-                  <span>💰 {job.salary}</span>
-                  <span>🕒 {job.posted}</span>
+                  <span><Icon name="pin" className="inline-icon" /> {job.location}</span>
+                  <span><Icon name="coins" className="inline-icon" /> {job.salary}</span>
+                  <span><Icon name="clock" className="inline-icon" /> {job.posted}</span>
                 </div>
 
                 <button type="button" className="apply-quick-btn">
@@ -625,7 +706,7 @@ function App() {
               <li>• Perfect for serious job seekers who don't want to miss out</li>
             </ul>
             <button type="button" className="priority-cta" onClick={() => window.location.href = 'https://tallento.ai/'}>
-              Activate Priority Mode →
+              Activate Priority Mode <Icon name="arrowRight" className="inline-icon" />
             </button>
             <p className="priority-footer">Limited launch pricing • 100% job-seeker focused</p>
           </div>
@@ -640,38 +721,38 @@ function App() {
           </div>
           <div className="loop-grid">
             <article className="loop-card">
-              <div className="loop-icon">⚡</div>
+              <div className="loop-icon"><Icon name="bolt" /></div>
               <h3>Easy application, higher output</h3>
               <p>One-click apply with auto-filled profile, resume highlights, and role-specific pitch snippets. Save hours on applications.</p>
               <div className="loop-features">
-                <span className="feature-tag">✓ Auto-fill applications</span>
-                <span className="feature-tag">✓ Resume highlights</span>
-                <span className="feature-tag">✓ Custom pitch snippets</span>
+                <span className="feature-tag"><Icon name="checkBadge" className="inline-icon" /> Auto-fill applications</span>
+                <span className="feature-tag"><Icon name="checkBadge" className="inline-icon" /> Resume highlights</span>
+                <span className="feature-tag"><Icon name="checkBadge" className="inline-icon" /> Custom pitch snippets</span>
               </div>
             </article>
             <article className="loop-card">
-              <div className="loop-icon">🔄</div>
+              <div className="loop-icon"><Icon name="refresh" /></div>
               <h3>Engagement loop</h3>
               <p>Stay informed and never miss an opportunity with real-time updates.</p>
               <ul className="engagement-list">
                 {engagementLoop.map((item) => (
                   <li key={item}>
-                    <span className="list-icon">→</span>
+                    <span className="list-icon"><Icon name="arrowRight" /></span>
                     {item}
                   </li>
                 ))}
               </ul>
             </article>
             <article className="loop-card">
-              <div className="loop-icon">🎯</div>
+              <div className="loop-icon"><Icon name="target" /></div>
               <h3>Retention engine</h3>
               <p>
                 Continuous job recommendations and AI career guidance keep you active and growing beyond your first application.
               </p>
               <div className="loop-features">
-                <span className="feature-tag">✓ Weekly recommendations</span>
-                <span className="feature-tag">✓ Career insights</span>
-                <span className="feature-tag">✓ Skill development</span>
+                <span className="feature-tag"><Icon name="checkBadge" className="inline-icon" /> Weekly recommendations</span>
+                <span className="feature-tag"><Icon name="checkBadge" className="inline-icon" /> Career insights</span>
+                <span className="feature-tag"><Icon name="checkBadge" className="inline-icon" /> Skill development</span>
               </div>
             </article>
           </div>
