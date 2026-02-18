@@ -72,31 +72,36 @@ const trustStats = [
   { value: 'AI', label: 'Career Guidance', icon: '🤖' }
 ]
 
-const careerCards = [
+const careerJourneySteps = [
   {
+    number: '01',
     icon: '🎯',
-    title: 'Discover role-fit jobs',
-    description: 'Browse teaching & IT roles matched to your skills and experience'
+    title: 'Browse role-fit jobs',
+    description: 'See teaching & IT roles with salary ranges in ₹ LPA, hiring demand, and AI match scores before signup.'
   },
   {
+    number: '02',
     icon: '💰',
     title: 'Preview salary and demand',
-    description: 'See real salary ranges in ₹ LPA and hiring demand before applying'
+    description: 'Real salary ranges and market demand insights help you make informed decisions before applying.'
   },
   {
+    number: '03',
     icon: '🤖',
     title: 'Get AI match score',
-    description: 'Know exactly how well you fit each role with AI-powered analysis'
+    description: 'Know exactly how well you fit each role with AI-powered analysis of your skills and experience.'
   },
   {
-    icon: '👀',
-    title: 'Track recruiter activity',
-    description: 'See who viewed your profile and get instant interview invites'
+    number: '04',
+    icon: '📄',
+    title: 'Upload resume to unlock',
+    description: 'AI parsing activates full ranking, recruiter visibility, and one-click application features.'
   },
   {
+    number: '05',
     icon: '⚡',
-    title: 'Apply with one click',
-    description: 'Auto-filled applications save time and increase response rates'
+    title: 'Apply & track activity',
+    description: 'One-click apply with auto-filled profile and track recruiter views and interview invites in real-time.'
   }
 ]
 
@@ -166,57 +171,6 @@ const recruiterJobs = [
     posted: '10h ago',
     match: 90,
     urgent: false
-  }
-]
-
-const recommendedJobs = [
-  {
-    role: 'IIT JEE Mathematics Teacher',
-    company: 'Allen Career Institute',
-    location: 'Kota, Rajasthan',
-    salary: '₹8-12 LPA',
-    match: 94,
-    tags: ['IIT JEE', 'Mathematics', 'Full-time']
-  },
-  {
-    role: 'Backend Developer',
-    company: 'PhysicsWallah',
-    location: 'Noida, UP',
-    salary: '₹10-18 LPA',
-    match: 91,
-    tags: ['Node.js', 'MongoDB', 'Remote']
-  },
-  {
-    role: 'NEET Chemistry Faculty',
-    company: 'Aakash Institute',
-    location: 'Delhi NCR',
-    salary: '₹6-10 LPA',
-    match: 89,
-    tags: ['NEET', 'Chemistry', 'Full-time']
-  },
-  {
-    role: 'Full Stack Developer',
-    company: 'Unacademy',
-    location: 'Bangalore, KA',
-    salary: '₹12-20 LPA',
-    match: 92,
-    tags: ['React', 'Node.js', 'Hybrid']
-  },
-  {
-    role: 'Academic Counselor',
-    company: "Byju's",
-    location: 'Bangalore, KA',
-    salary: '₹4-7 LPA',
-    match: 86,
-    tags: ['Sales', 'Counseling', 'Full-time']
-  },
-  {
-    role: 'English Teacher (CBSE)',
-    company: 'Delhi Public School',
-    location: 'Pune, MH',
-    salary: '₹5-8 LPA',
-    match: 88,
-    tags: ['CBSE', 'English', 'Full-time']
   }
 ]
 
@@ -408,18 +362,21 @@ function App() {
         </div>
       </section>
 
-      <section className="career-start animate-on-scroll">
+      <section className="career-journey-section animate-on-scroll" id="how-it-works">
         <div className="container">
           <div className="section-head">
-            <h2>Your career path starts here</h2>
-            <p>Make better job decisions with relevance-first discovery and AI guided fit checks.</p>
+            <h2>Your complete career journey with Tallento</h2>
+            <p>From discovery to hire - a seamless, AI-powered path designed for teaching & IT professionals.</p>
           </div>
-          <div className="career-grid">
-            {careerCards.map((item) => (
-              <article key={item.title} className="career-card">
-                <div className="career-icon">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+          <div className="journey-grid">
+            {careerJourneySteps.map((step, idx) => (
+              <article className="journey-card" key={step.title}>
+                <div className="journey-icon">{step.icon}</div>
+                <div className="journey-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+                <span>{step.number}</span>
               </article>
             ))}
           </div>
@@ -464,68 +421,6 @@ function App() {
                   <small className="demand-badge">{job.demand}</small>
                 </div>
                 <button type="button" className="check-match-preview" onClick={handleCheckMatch}>Check Match</button>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="journey-section animate-on-scroll" id="how-it-works">
-        <div className="container">
-          <div className="section-head">
-            <h2>Micro-commitment journey</h2>
-            <p>Low friction path: browse, open, evaluate fit, then unlock with resume upload.</p>
-          </div>
-          <div className="journey-grid">
-            {funnelSteps.map((step, idx) => (
-              <article className="journey-card" key={step.title}>
-                <span>0{idx + 1}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="recruiters-section animate-on-scroll">
-        <div className="container">
-          <div className="recruiter-head">
-            <div className="section-head left">
-              <h2>Recruiters are actively hiring.</h2>
-              <p>Fresh roles added every hour. Your perfect match could be live right now across India.</p>
-            </div>
-            <button type="button" className="view-jobs-btn">
-              View All Jobs →
-            </button>
-          </div>
-
-          <div className="recruiter-grid">
-            {recruiterJobs.map((job) => (
-              <article key={job.role} className="recruiter-card">
-                <div className="recruiter-top">
-                  <div className={`company-badge ${job.tone}`}>{job.badge}</div>
-                  <div className="recruiter-title-wrap">
-                    <h3>
-                      {job.role} <span className="verified-mark">✓</span>
-                      {job.urgent && <span className="urgent-badge">Urgent</span>}
-                    </h3>
-                    <p>{job.company}</p>
-                  </div>
-                  <button type="button" className="bookmark-btn" aria-label={`Save ${job.role}`}>
-                    ⭐
-                  </button>
-                </div>
-
-                <div className="recruiter-meta">
-                  <span>📍 {job.location}</span>
-                  <span>💰 {job.salary}</span>
-                  <span>🕒 {job.posted}</span>
-                </div>
-
-                <button type="button" className="apply-quick-btn">
-                  Quick Apply
-                </button>
               </article>
             ))}
           </div>
@@ -671,38 +566,68 @@ function App() {
         </div>
       </section>
 
-      <section className="recommended-section animate-on-scroll">
+      <section className="recruiters-section animate-on-scroll">
         <div className="container">
-          <div className="section-head">
-            <h2>Recommended for you</h2>
-            <p>Based on your role goals, salary intent, and experience across India.</p>
+          <div className="recruiter-head">
+            <div className="section-head left">
+              <h2>Recruiters are actively hiring.</h2>
+              <p>Fresh roles added every hour. Your perfect match could be live right now across India.</p>
+            </div>
+            <button type="button" className="view-jobs-btn">
+              View All Jobs →
+            </button>
           </div>
-          <div className="recommended-grid">
-            {recommendedJobs.map((job) => (
-              <article key={job.role} className="recommended-card">
-                <div className="recommended-header">
-                  <div className="company-icon-small">
-                    {job.company.includes('Allen') ? '🎓' : 
-                     job.company.includes('Physics') ? '💻' : 
-                     job.company.includes('Aakash') ? '📚' :
-                     job.company.includes('Unacademy') ? '⚛️' :
-                     job.company.includes('Byju') ? '🎯' : '👨‍🏫'}
+
+          <div className="recruiter-grid">
+            {recruiterJobs.map((job) => (
+              <article key={job.role} className="recruiter-card">
+                <div className="recruiter-top">
+                  <div className={`company-badge ${job.tone}`}>{job.badge}</div>
+                  <div className="recruiter-title-wrap">
+                    <h3>
+                      {job.role} <span className="verified-mark">✓</span>
+                      {job.urgent && <span className="urgent-badge">Urgent</span>}
+                    </h3>
+                    <p>{job.company}</p>
                   </div>
+                  <button type="button" className="bookmark-btn" aria-label={`Save ${job.role}`}>
+                    ⭐
+                  </button>
                 </div>
-                <h3>{job.role}</h3>
-                <p className="company-name">{job.company}</p>
-                <div className="job-meta-row">
+
+                <div className="recruiter-meta">
                   <span>📍 {job.location}</span>
                   <span>💰 {job.salary}</span>
+                  <span>🕒 {job.posted}</span>
                 </div>
-                <div className="job-tags-row">
-                  {job.tags.map((tag) => (
-                    <span key={tag} className="job-tag">{tag}</span>
-                  ))}
-                </div>
-                <button type="button" className="check-match-btn" onClick={handleCheckMatch}>Check Match</button>
+
+                <button type="button" className="apply-quick-btn">
+                  Quick Apply
+                </button>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="priority-section animate-on-scroll">
+        <div className="container">
+          <div className="priority-card">
+            <div className="priority-badge">TALLENTO.AI • JOB BOOST</div>
+            <h2>Be a <span className="priority-highlight">Priority Applicant</span></h2>
+            <p className="priority-description">
+              Get faster profile visibility in recruiter searches, instant notifications for job matches, 
+              and callbacks. Gain more recruiter engagement with a higher number of interviews.
+            </p>
+            <ul className="priority-benefits">
+              <li>• Shown on top for recruiters searching similar profiles</li>
+              <li>• Smart alerts when matching jobs are posted</li>
+              <li>• Perfect for serious job seekers who don't want to miss out</li>
+            </ul>
+            <button type="button" className="priority-cta" onClick={() => window.location.href = 'https://tallento.ai/'}>
+              Activate Priority Mode →
+            </button>
+            <p className="priority-footer">Limited launch pricing • 100% job-seeker focused</p>
           </div>
         </div>
       </section>
