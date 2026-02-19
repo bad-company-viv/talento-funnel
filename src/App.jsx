@@ -359,7 +359,7 @@ function App() {
             <div className="metric-grid">
               <div>
                 <span>Salary Range</span>
-                <strong>$95k-$128k</strong>
+                <strong>₹9.5-₹12.8 LPA</strong>
               </div>
               <div>
                 <span>Open Roles</span>

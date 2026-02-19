@@ -59,7 +59,7 @@
 }
 
 .brand img {
-  height: 40px;
+  height: 52px;
   width: auto;
   display: block;
 }
@@ -1190,7 +1190,7 @@
 }
 
 .footer-logo img {
-  height: 45px;
+  height: 58px;
   width: auto;
   display: block;
 }
@@ -1230,6 +1230,10 @@
   
   .footer-logo {
     padding-top: 0;
+  }
+
+  .footer-logo img {
+    height: 52px;
   }
   
   .footer-description {
@@ -1571,6 +1575,10 @@
     font-size: 0.8rem;
     padding: 0.7rem 1rem;
     white-space: nowrap;
+  }
+
+  .brand img {
+    height: 44px;
   }
 }
 
